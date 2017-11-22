@@ -25,7 +25,7 @@ SECRET_KEY = 'wyg5c#m7bv02d9r_j*q#f(6ae@c=osqhs*e9uirc55ljri$b10'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['robertogarcia.herokuapp.com']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'RobertoGarcia.urls'
@@ -75,16 +76,10 @@ WSGI_APPLICATION = 'RobertoGarcia.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Blog',
-        'USER': 'postgres',
-        'PASSWORD': 'qwe123',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
-}
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES = { 'default': dj_database_url.config() }
+
 
 
 # Password validation
@@ -124,9 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 #STATTIC FILES STUFF
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
 
 #MEDIA STUFF (USER UPLOADS)
 MEDIA_URL = '/media/'
