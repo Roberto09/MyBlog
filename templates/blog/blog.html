@@ -1,0 +1,96 @@
+{% extends 'base/base2.html' %}
+{% block contenido %}
+
+
+	<div id="All_Blog_Content">
+
+<div id="Blog_Part">
+<div id="Blog_Header">
+<h2 id="header-MB">My Blogs</h2>
+<p id="header-description-MB">In this section I post blogs on updates of cool stuff I am working on or small articles about my CS experiences.</p>
+</div>
+
+{% if object_list %}
+	{% for BP in object_list %}
+	<div id="Blog_Container">
+
+
+	<h3 id="Post_Title" >{{BP.title}}</h3>
+	<p>{{BP.content1}}</p>
+
+	{% if BP.image1 %}
+	<img class= "BP_image"src="{{ BP.image1.url }}" alt="">
+	{% endif %}
+
+	{% if BP.content2 %}
+	<p>{{BP.content2}}</p>
+	{% endif %}
+
+	{% if BP.image2 %}
+	<img class= "BP_image" src="{{ BP.image2.url }}" alt="">
+	{% endif %}
+
+	{% if BP.ref_code %}
+
+	<p id = "Ref_Code">Codigo de referencia: <br> {{BP.ref_code|linebreaks}}</p>
+	{% endif %}
+
+
+	{% if BP.github_link %}
+	<p>GitHub link: {{BP.github_link}}</p>
+	{% endif %}
+
+	{% if BP.references %}
+	<p>Referencias: {{BP.references}}</p>
+	{% endif %}
+
+
+	<p id= "Blog_Date">Posted on: {{BP.upload_date}} by Roberto Garcia</p>
+	</div>
+	{% endfor %}
+{% endif %}
+
+
+<div id="Botones_Blog">
+	{% if page_obj.has_previous %}
+	<a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary" >Previous Page</a>
+	{% endif %}
+
+	{% if page_obj.has_next %}
+	<a href="?page={{ page_obj.next_page_number }}" class="btn btn-primary" >Next Page</a>
+	{% endif %}
+
+</div>
+
+
+
+
+</div>
+
+<div id="Lastest_Blogs">
+	<h4>Page({{page_obj.number}}).Blogs in this page:</h4>
+	{% for BPLB in object_list %}
+	<p id ="preview_title">Titulo: {{BPLB.title}}</p>
+	<p id="preview_content">{{BPLB.content1|slice:":200"}}...</p>
+
+	{% if BPLB.image1 %}
+	<img id ="preview_image" src="{{ BPLB.image1.url }}" alt="">
+	{% endif %}
+
+	{% endfor %}
+
+
+</div>
+
+	</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% block contenido %}
+<div id = "index_container">
+<h3>Welcome to Roberto´s Blog</h3>
+
+
+<div id="intro_p">
+<p>Hi there! this is a blog mainly about my personal proyects. However I also include other stuff like what am I learning and sometimes personal experiences regarding IT. I really hope you find it interesting sweeping through my posts. If you have any recomendation or construtive criticism feel free to email me at 
+<a href = 'mailto:roberto.gt1509@gmail.com'>roberto.gt1509@gmail.com</a>
+</p>
+
+
+</div>
+
+
+<div id="Buttons">
+
+
+<a href="{#}" id ="BTN1" class="btn btn-primary">Blog
+</a>
+
+<a href="{% url 'Home:AboutMe' %}" id ="BTN2" class="btn btn-primary">AboutMe</a>
+
+</div>
+
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,2 @@
+Agregar lo mismo que a la app de heroku +
+-Pillow

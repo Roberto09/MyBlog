@@ -1,0 +1,71 @@
+{% extends 'base/base2.html' %}
+
+{% block contenido %}
+
+<div id="aboutme_container">
+<h4>AboutMe</h4>
+<button id ="BTN1-Git" type="button" class="btn btn-primary">Github Profile</button>
+<button id ="BTN1-Git" type="button" class="btn btn-primary">Linkedin Profile</button>
+
+<div id="Head-AM">
+	<div id="header-AM">
+	<h5>Personal Info: </h5>
+	</div>
+
+	<p id ="Head-AM-P1">My full name is Roberto Garcia Torres, I am studying a major´s degree in engineering in computer science in the Tecnologico de Monterrey. Personally I’am deeply interested in competitive programming, web and mobile development. This page, in fact is built in Django framework using python. Other things you may want to know about me is that I really like sports, hanging out with my friends and food. I always want to seek discomfort and that is what encourages me to do a lot of things. Here´s a picture of me:
+	</p>
+	{% load static %} 
+	<img id="Profile_Pic" src="{% static 'html_images/Profile.jpeg' %}" alt="Profile Picture">
+
+</div>
+
+<div id="Middle-AM">
+
+	<div id="middle-header-AM">
+	<h5>Technical Skills: </h5>
+	</div>
+
+	<img id="Mountain_Pic" src="{% static 'html_images/Escritorio.jpeg' %}" alt="Profile Picture">
+
+
+	<p id ="Middle-AM-P1">
+<strong>Programming Languages:</strong><br/>
+•	Python: (Beginner)<br/>
+•	C++: (Beginner)<br/>
+•	JavaScript: (Beginner)<br/>
+<br/>
+<strong>Technologies/frameworks:</strong><br/>
+•	Django:(Beginner)<br/>
+•	Html & Css: (Beginner)<br/>
+•	Android Studio (Beginner)<br/>
+
+	</p>
+
+</div>
+
+
+<div id="Foot-AM">
+
+	<div id="foot-header-AM">
+	<h5>Awards and Leadership: </h5>
+	</div>
+
+	<p id ="Foot-AM-P1">
+•	3rd place in TopTeen (1 semester programming competition in college with participants from the 3 CS majors) -2017.<br/>
+•	Collaboration as staff in Hack-Mty -2017.<br/>
+•	Capitan from my student society in High-School leading about 75 people -2017.<br/>
+•	Invitation and assistance to ENLA (National Meeting of Leaders in Action) in Queretaro -2016.<br/>
+•	Invitation and assistance to SE-LIDER (national leadership congress) in Monterrey -2015.<br/>
+
+	</p>
+	{% load static %} 
+	<img id="Profile_Pic" src="{% static 'html_images/Cerro.jpg' %}" alt="Profile Picture">
+
+
+
+
+</div>
+
+</div>
+
+{% endblock %}
