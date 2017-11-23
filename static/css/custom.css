@@ -50,7 +50,7 @@
 
 a:hover,
 a:focus {
-  color: #437ac1;
+  color: #969696;
   text-decoration: none;
 }
 a:focus {
@@ -216,7 +216,7 @@ li > a:hover:before{
 
 /* About Me Template */
 
-#Head-AM, #Middle-AM, #Foot-AM
+#Head-AM, #Middle-AM, #Foot-AM, #LifePlan, #ECode
 {
     border-style: solid;
     border-top-width: 2px;
@@ -248,6 +248,21 @@ li > a:hover:before{
     border-radius: 5px;
     margin-left: 50px;
 }
+
+#Semester_Plans
+{
+    display: inline-block;
+    height: 210px;
+    width: 200px;
+    border-color: #636363;
+    border-style: solid;
+    border-width: 3px;
+    margin-top: -330px;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+
 #Head-AM-P1, #Foot-AM-P1
 {
     display: inline-block;
@@ -281,10 +296,36 @@ li > a:hover:before{
     width: 300px;
 }
 
+#LifePlan-P1
+{
+    display: inline-block;
+    text-align: center;
+    width: 700px;
+}
+#ECode-P1
+{
+    display: inline-block;
+    text-align: left;
+    width: 400px;
+}
+
 #Middle-AM
 {
     text-align: right;
 }
+
+#LifePlan
+{
+    text-align: center;
+}
+
+#LifePlan-header-AM, #ECode-header-AM
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 
 #foot-header-AM
 {
@@ -298,7 +339,7 @@ li > a:hover:before{
     margin-bottom: 20px;
 }
 
-#Foot-AM
+.lastC
 {
     margin-bottom: 50px;
 }
@@ -422,6 +463,6 @@ strong
 
 h5, h4
 {
-    color: blue;
+    color: #1a3663;
 }
 
